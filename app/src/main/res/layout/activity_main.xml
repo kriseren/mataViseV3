@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greenBackground"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="319dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="@string/mata_vise_v3"
+        android:textAlignment="center"
+        android:textColor="#FF37474F"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDeath"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textViewDeath"
+        android:layout_width="323dp"
+        android:layout_height="339dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/bienvenidx_a_matavisev3_npulsa_el_bot_n_para_matar_a_vise"
+        android:textAlignment="center"
+        android:textColor="#FF37474F"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="148dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="468dp"
+        android:background="@color/greenDark"
+        android:onClick="onClickDeath"
+        android:text="@string/generar_muerte"
+        android:textAlignment="center"
+        android:textColor="#37474F"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/greenDark" />
+
+    <ImageButton
+        android:id="@+id/imageButtonShare"
+        android:layout_width="84dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="468dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/greenDark"
+        android:contentDescription="@string/share_button_description"
+        android:onClick="onClickShare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeShareDrawable" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="84dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="468dp"
+        android:background="@color/greenDark"
+        android:contentDescription="@string/share_button_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeShareDrawable" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
