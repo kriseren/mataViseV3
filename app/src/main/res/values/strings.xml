@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">MataViseV3 Pocket Edition</string>
-    <string name="share_button_description">Compartir muerte</string>
+    <string name="copyToClipboard_button_description">Copiar muerte al portapapeles</string>
     <string name="generar_muerte">Generar muerte</string>
     <string name="textview">TextView</string>
     <string name="mata_vise_v3">MATA VISE V3</string>
-    <string name="bienvenidx_a_matavisev3_npulsa_el_bot_n_para_matar_a_vise">¡Bienvenidx a MataViseV3!\nPulsa el botón para matar a Vise.</string>
+    <string name="bienvenidx_a_matavisev3_npulsa_el_bot_n_para_matar_a_vise">Te llamas Vise y eres un despojo humano que no sirve para nada. Al morir llegaste a una dimensión extraña donde podrás visualizar todas las posibilidades de tus muertes.\n¿Cuál será la que te habrá ocurrido?</string>
 </resources>
