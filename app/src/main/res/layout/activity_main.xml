@@ -74,7 +74,7 @@
         app:srcCompat="?attr/actionModeCopyDrawable" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imageButtonCopy"
         android:layout_width="84dp"
         android:layout_height="62dp"
         android:layout_marginStart="19dp"

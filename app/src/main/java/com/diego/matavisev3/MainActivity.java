@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,12 +21,19 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity
 {
+    //Attributes.
     private int numberOfDeathsShown=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Gets the buttons and disables them
+        ImageButton shareButton = (ImageButton) findViewById(R.id.imageButtonShare);
+        ImageButton copyButton = (ImageButton) findViewById(R.id.imageButtonCopy);
+        shareButton.setEnabled(false);
+        copyButton.setEnabled(false);
     }
 
     //Method that is called when the button is clicked and chooses one death to show.
@@ -48,6 +56,11 @@ public class MainActivity extends AppCompatActivity
         numberOfDeathsShown++;
         actionsOnDeathsShown(numberOfDeathsShown,view);
 
+        //Enables the share and copy buttons.
+        ImageButton shareButton = (ImageButton) findViewById(R.id.imageButtonShare);
+        ImageButton copyButton = (ImageButton) findViewById(R.id.imageButtonCopy);
+        shareButton.setEnabled(true);
+        copyButton.setEnabled(true);
     }
 
     //Returns the line passed as a parameter.
