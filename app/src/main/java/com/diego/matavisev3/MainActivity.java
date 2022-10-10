@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Gets the buttons and disables them
-        ImageButton shareButton = (ImageButton) findViewById(R.id.imageButtonShare);
-        ImageButton copyButton = (ImageButton) findViewById(R.id.imageButtonCopy);
+        ImageButton shareButton = findViewById(R.id.imageButtonShare);
+        ImageButton copyButton = findViewById(R.id.imageButtonCopy);
         shareButton.setEnabled(false);
         copyButton.setEnabled(false);
     }
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity
         actionsOnDeathsShown(numberOfDeathsShown,view);
 
         //Enables the share and copy buttons.
-        ImageButton shareButton = (ImageButton) findViewById(R.id.imageButtonShare);
-        ImageButton copyButton = (ImageButton) findViewById(R.id.imageButtonCopy);
+        ImageButton shareButton = findViewById(R.id.imageButtonShare);
+        ImageButton copyButton = findViewById(R.id.imageButtonCopy);
         shareButton.setEnabled(true);
         copyButton.setEnabled(true);
     }
