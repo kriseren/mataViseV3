@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/greenBackground"
-    tools:context=".MainActivity">
+    tools:context=".whereIsJonatanActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -33,7 +33,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="102dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/bienvenidaMataVise"
+        android:text="@string/bienvenidaDondeEstaJonatan"
         android:textAlignment="center"
         android:textColor="#FF37474F"
         android:textSize="16sp"
@@ -50,7 +50,7 @@
         android:layout_marginTop="468dp"
         android:background="@color/greenDark"
         android:onClick="onClickDeath"
-        android:text="@string/generar_muerte"
+        android:text="@string/buscar_a_jonatan"
         android:textAlignment="center"
         android:textColor="#37474F"
         app:cornerRadius="10dp"

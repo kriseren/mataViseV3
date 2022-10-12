@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">MataViseV3 Pocket Edition</string>
-    <string name="copyToClipboard_button_description">Copiar muerte al portapapeles</string>
+    <string name="shareButton_description">Compartir muerte</string>
+    <string name="changeModeButton_description">Cambiar modo</string>
     <string name="generar_muerte">Generar muerte</string>
+    <string name="buscar_a_jonatan">Buscar a Jonatan</string>
     <string name="textview">TextView</string>
     <string name="mata_vise_v3">MATA VISE V3</string>
-    <string name="bienvenidx_a_matavisev3_npulsa_el_bot_n_para_matar_a_vise">Te llamas Vise y eres un despojo humano que no sirve para nada. Al morir llegaste a una dimensión extraña donde podrás visualizar todas las posibilidades de tus muertes.\n¿Cuál será la que te habrá ocurrido?</string>
+    <string name="bienvenidaMataVise">Te llamas Vise y eres un despojo humano que no sirve para nada. Al morir llegaste a una dimensión extraña donde podrás visualizar todas las posibilidades de tus muertes.\n¿Cuál será la que te habrá ocurrido?</string>
+    <string name="dondeEstaJonatan">ENCUENTRA A JONATAN</string>
+    <string name="bienvenidaDondeEstaJonatan">Estás en clase y tu amigo Jonatan desaparece a menudo. En esta nueva dimensión, Jonatan puede estar en miles de sitios a la vez.\n¿Dónde estará Jonatan esta vez?</string>
 </resources>
