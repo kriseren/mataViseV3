@@ -38,6 +38,7 @@ public class whereIsJonatanActivity extends AppCompatActivity {
         String result = "Sitio Nº"+election+"\n"+ place;
         TextView resultView = findViewById(R.id.textViewPlace);
         resultView.setText(result);
+        numberOfPlacesShown++;
     }
 
     //Returns the line passed as a parameter.
@@ -56,7 +57,7 @@ public class whereIsJonatanActivity extends AppCompatActivity {
         }
     }
 
-    //TODO Adaptar todo el código a Busca a Jonatan
+    //Shares the place.
     public void onClickSharePlace(View view)
     {
         if(numberOfPlacesShown>0)
@@ -76,6 +77,7 @@ public class whereIsJonatanActivity extends AppCompatActivity {
 
     }
 
+    //Finishes the activity so that switches to the first one.
     public void onClickChangeMode(View view)
     {
         finish();

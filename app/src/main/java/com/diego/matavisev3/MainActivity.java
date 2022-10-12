@@ -1,14 +1,10 @@
 package com.diego.matavisev3;
 
 import android.annotation.SuppressLint;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,6 +64,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //Shares the death.
     public void onClickShareDeath(View view)
     {
         if(numberOfDeathsShown>0)
@@ -86,6 +83,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    //Creates a new instance of the whereIsJonatan Activity.
     public void onClickChangeMode(View view)
     {
         Intent intent = new Intent(this, whereIsJonatanActivity.class);
