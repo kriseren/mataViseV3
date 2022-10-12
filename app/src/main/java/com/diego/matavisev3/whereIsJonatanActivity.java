@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 public class whereIsJonatanActivity extends AppCompatActivity {
 
     //Attributes.
-    private int numberOfDeathsShown=0;
+    private int numberOfPlacesShown=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +24,26 @@ public class whereIsJonatanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_where_is_jonatan);
     }
     //Method that is called when the button is clicked and chooses one death to show.
-    public void onClickDeath(View view)
+    public void onClickPlace(View view)
     {
-        //Shows a random death.
+        //Shows a random place.
         int election;
         do
         {
             election=1+(int)(Math.random()*1000);
         }
         while(selector(election).equals(""));
-        String death = selector(election);
-        death = death.substring(death.indexOf(" ")+1);
-        String result = "Muerte Nº"+election+"\n"+death;
-        TextView resultView = findViewById(R.id.textViewDeath);
+        String place = selector(election);
+        place = place.substring(place.indexOf(" ")+1);
+        String result = "Sitio Nº"+election+"\n"+ place;
+        TextView resultView = findViewById(R.id.textViewPlace);
         resultView.setText(result);
     }
 
     //Returns the line passed as a parameter.
     public String selector(int numLine)
     {
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("deaths.txt"))))
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("places.txt"))))
         {
             String line="";
             for (int i=0; i<numLine; i++)
@@ -57,13 +57,13 @@ public class whereIsJonatanActivity extends AppCompatActivity {
     }
 
     //TODO Adaptar todo el código a Busca a Jonatan
-    public void onClickShareDeath(View view)
+    public void onClickSharePlace(View view)
     {
-        if(numberOfDeathsShown>0)
+        if(numberOfPlacesShown>0)
         {
             //Gets the text to send.
             TextView resultView = findViewById(R.id.textViewDeath);
-            String shareDeath = "¡Mira esta muerte de MataViseV3!\n"+resultView.getText();
+            String shareDeath = "¡Mira donde está Jonatan en MataViseV3!\n"+resultView.getText();
             //Opens the menu to shares it.
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
@@ -72,15 +72,12 @@ public class whereIsJonatanActivity extends AppCompatActivity {
             startActivity(sendIntent);
         }
         else{
-            Snackbar.make(view,"Aún no se ha generado ninguna muerte.",Snackbar.LENGTH_LONG).show();}
+            Snackbar.make(view,"Aún no se ha encontrado a Jonatan.",Snackbar.LENGTH_LONG).show();}
 
     }
 
-    //TODO Arreglar esto para que vaya a la anterior.
     public void onClickChangeMode(View view)
     {
-        Intent intent = new Intent(this, whereIsJonatanActivity.class);
-        startActivity(intent);
+        finish();
     }
-
 }
