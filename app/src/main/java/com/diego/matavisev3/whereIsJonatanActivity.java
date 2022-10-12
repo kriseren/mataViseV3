@@ -23,7 +23,7 @@ public class whereIsJonatanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_where_is_jonatan);
     }
-    //Method that is called when the button is clicked and chooses one death to show.
+    //Method that is called when the button is clicked and chooses one place to show.
     public void onClickPlace(View view)
     {
         //Shows a random place.
