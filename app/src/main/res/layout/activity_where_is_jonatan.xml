@@ -60,28 +60,28 @@
         app:rippleColor="@color/greenDark" />
 
     <ImageButton
-        android:id="@+id/imageButtonChangeMode"
+        android:id="@+id/imageButtonChangeMode2"
         android:layout_width="84dp"
         android:layout_height="62dp"
         android:layout_marginTop="468dp"
         android:layout_marginEnd="20dp"
         android:background="@color/greenDark"
         android:contentDescription="@string/changeModeButton_description"
-        android:onClick="onClickChangeMode"
+        android:onClick="onClickChangeMode2"
         app:tint="@color/greyDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/stat_notify_sync_noanim" />
 
     <ImageButton
-        android:id="@+id/imageButtonShare"
+        android:id="@+id/imageButtonShare2"
         android:layout_width="84dp"
         android:layout_height="62dp"
         android:layout_marginStart="19dp"
         android:layout_marginTop="468dp"
         android:background="@color/greenDark"
         android:contentDescription="@string/shareButton_description"
-        android:onClick="onClickSharePlace"
+        android:onClick="onClickSharePlace2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeShareDrawable"

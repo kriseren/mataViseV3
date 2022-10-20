@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -30,7 +32,7 @@ public class whereIsJonatanActivity extends AppCompatActivity {
         int election;
         do
         {
-            election=1+(int)(Math.random()*1000);
+            election=(int)(1+Math.random()*100);
         }
         while(selector(election).equals(""));
         String place = selector(election);
@@ -58,12 +60,12 @@ public class whereIsJonatanActivity extends AppCompatActivity {
     }
 
     //Shares the place.
-    public void onClickSharePlace(View view)
+    public void onClickSharePlace2(View view)
     {
         if(numberOfPlacesShown>0)
         {
             //Gets the text to send.
-            TextView resultView = findViewById(R.id.textViewDeath);
+            TextView resultView = findViewById(R.id.textViewPlace);
             String shareDeath = "¡Mira donde está Jonatan en MataViseV3!\n"+resultView.getText();
             //Opens the menu to shares it.
             Intent sendIntent = new Intent();
@@ -78,8 +80,5 @@ public class whereIsJonatanActivity extends AppCompatActivity {
     }
 
     //Finishes the activity so that switches to the first one.
-    public void onClickChangeMode(View view)
-    {
-        finish();
-    }
+    public void onClickChangeMode2(View view){finish();}
 }
