@@ -3,6 +3,7 @@ package com.diego.matavisev3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,16 +15,27 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class whereIsJonatanActivity extends AppCompatActivity {
 
     //Attributes.
     private int numberOfPlacesShown=0;
-
+    private URL urlPlaces,urlDeaths;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_where_is_jonatan);
+
+        //Set URL variables.
+        try
+        {
+            urlDeaths = new URL("https://github.com/kriseren/DatosMataVise/blob/main/deaths.txt");
+            urlPlaces = new URL("https://github.com/kriseren/DatosMataVise/blob/main/places.txt");
+        }
+        catch(MalformedURLException e){e.printStackTrace();}
+
     }
     //Method that is called when the button is clicked and chooses one place to show.
     public void onClickPlace(View view)
@@ -55,8 +67,26 @@ public class whereIsJonatanActivity extends AppCompatActivity {
         }
         catch(IOException e)
         {
-            return "Error.";
+            e.printStackTrace();
+            return "Error";
         }
+    }
+
+    //TODO abrir ficheros en la nube sin errores
+    public String selectorInternet(int numLine)
+    {
+        final String[] line = {""};
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                try(BufferedReader reader = new BufferedReader(new InputStreamReader(urlPlaces.openStream())))
+                {
+                    for (int i=0; i<numLine; i++)
+                        line[0] = reader.readLine();
+                } catch (IOException e){e.printStackTrace();}
+            }
+        });
+        return line[0];
     }
 
     //Shares the place.
