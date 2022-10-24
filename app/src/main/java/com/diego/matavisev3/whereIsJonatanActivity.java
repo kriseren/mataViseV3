@@ -112,7 +112,6 @@ public class whereIsJonatanActivity extends AppCompatActivity {
     //Finishes the activity so that switches to the first one.
     public void onClickChangeMode2(View view){finish();}
 
-    //TODO poder calcular el numero de lineas que tiene un archivo.
     //Calculates the maximum number of lines the file has.
     public long getMaxLines(URL url)
     {
