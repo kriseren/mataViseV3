@@ -71,7 +71,7 @@
         app:tint="@color/greyDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/stat_notify_sync_noanim" />
+        app:srcCompat="@drawable/swap_horiz_40px" />
 
     <ImageButton
         android:id="@+id/imageButtonShare2"
