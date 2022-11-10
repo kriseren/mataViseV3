@@ -1,6 +1,7 @@
 package com.diego.matavisev3;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -12,19 +13,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 
 public class MainActivity extends AppCompatActivity
 {
     //Attributes.
     private int numberOfDeathsShown=0;
-
+    private static URL urlPlaces,urlDeaths;
+    private final File fileDeaths = new File(this.getFilesDir(),"deaths.txt");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Updates the source files "deaths.txt" and "places.txt"
+        new Thread(MainActivity::updateFiles);
     }
 
     //Method that is called when the button is clicked and chooses one death to show.
@@ -51,7 +62,7 @@ public class MainActivity extends AppCompatActivity
     //Returns the line passed as a parameter.
     public String selector(int numLine)
     {
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("deaths.txt"))))
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileDeaths))))
         {
             String line="";
             for (int i=0; i<numLine; i++)
@@ -111,6 +122,28 @@ public class MainActivity extends AppCompatActivity
                 mediaPlayer.start();
                 Snackbar.make(view,"¡Hemos verificado que eres un psicópata, la policía va en tu dirección!",Snackbar.LENGTH_LONG).show();
                 break;
+        }
+    }
+
+    public static void updateFiles()
+    {
+        try {
+            URL urlPlaces,urlDeaths;
+            //Create the connection to the URLs.
+            urlPlaces = new URL("https://raw.githubusercontent.com/kriseren/DatosMataVise/main/places.txt"); //Defines the places.txt URL.
+            urlDeaths = new URL("https://raw.githubusercontent.com/kriseren/DatosMataVise/main/deaths.txt"); //Defines the deaths.txt URL.
+
+            //Create the necessary objects for copying.
+            ReadableByteChannel readableByteChannelPlaces = Channels.newChannel(urlPlaces.openStream());
+            ReadableByteChannel readableByteChannelDeaths = Channels.newChannel(urlDeaths.openStream());
+            FileOutputStream fileOutputStream1 = MainActivity.openFileOutput("places.txt", Context.MODE_PRIVATE); //TODO arreglar el error
+            FileOutputStream fileOutputStream2 = MainActivity.openFileOutput("deaths.txt", Context.MODE_PRIVATE); //TODO arreglar el error.
+
+            //Copies the files.
+            fileOutputStream1.getChannel().transferFrom(readableByteChannelPlaces, 0, Long.MAX_VALUE);
+            fileOutputStream2.getChannel().transferFrom(readableByteChannelDeaths, 0, Long.MAX_VALUE);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
